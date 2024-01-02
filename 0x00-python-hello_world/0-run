@@ -10,4 +10,4 @@ if [ ! -f "$PYFILE" ]; then
     exit 1
 fi
 
-python "$PYFILE"
+python3 "$PYFILE"
