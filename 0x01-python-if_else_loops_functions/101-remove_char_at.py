@@ -1,11 +1,10 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 
 def remove_char_at(str, n):
-
     if n < 0 or n > len(str):
-        print("Invalid offset")
+        print("Invalid Offset")
         return 0
-    first_part = str[:n]
-    second_part = str[n+1:]
-    result = first_part + second_part
+    first = str[:n]
+    second = str[n+1:]
+    result = first + second
     return result
