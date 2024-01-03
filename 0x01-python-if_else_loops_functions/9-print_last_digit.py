@@ -5,4 +5,4 @@ def islower(c):
     else:
         ld = -(-c % 10)
 
-    print(ld)
+    return (ld)
