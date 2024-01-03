@@ -2,6 +2,7 @@
 
 for i in range(ord('z'), ord('a') - 1, -1):
     if i % 2 > 0:
-        print(chr(i).upper(), end='')
+        alpha = chr(i).upper()
     else:
-        print(chr(i), end='')
+        alpha = chr(i)
+    print("{}".format(alpha), end='')
