@@ -2,7 +2,6 @@
 if __name__ == '__main__':
     import calculator_1 as calc
     from sys import argv, exit
-    import argparse
     args_count = len(argv) - 1
     if args_count != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
