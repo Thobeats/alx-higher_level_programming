@@ -12,4 +12,4 @@ if __name__ == '__main__':
                 continue
             print(f"{i}: {j}")
     else:
-        print(f"{args_count} {arg_message}.")
+        print(f"{args_count} arguments.")
