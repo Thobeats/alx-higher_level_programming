@@ -8,4 +8,3 @@ if __name__ == '__main__':
     print(f"{a:d} + {b:d} = {calc.sub(a, b)}")
     print("{} + {} = {}".format(a, b, calc.mul(a, b)))
     print(f"{a:d} + {b:d} = {calc.div(a, b)}")
-
