@@ -10,6 +10,6 @@ if __name__ == '__main__':
         for i, j in enumerate(argv):
             if i == 0:
                 continue
-            print(f"{i} {j}")
+            print(f"{i}: {j}")
     else:
         print(f"{args_count} {arg_message}.")
