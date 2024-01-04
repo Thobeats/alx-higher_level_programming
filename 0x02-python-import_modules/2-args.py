@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
     from sys import argv
-    args_count == len(argv)
+    args_count == len(argv) - 1
     arg_message = 'arguement'
     if args_count > 1:
         arg_message = arg_message + 's'
