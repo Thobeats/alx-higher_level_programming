@@ -2,7 +2,7 @@
 if __name__ == '__main__':
     from sys import argv
     args_count = len(argv) - 1
-    arg_message = 'arguement'
+    arg_message = 'argument'
     if args_count > 1:
         arg_message = arg_message + 's'
     if args_count > 0:
