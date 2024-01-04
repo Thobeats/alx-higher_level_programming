@@ -12,16 +12,12 @@ if __name__ == '__main__':
     operator = argv[2]
     if operator == '+':
         print(f"{a} + {b} = {calc.add(a, b)}")
-        exit(0)
     elif operator == '-':
         print(f"{a} + {b} = {calc.sub(a, b)}")
-        exit(0)
     elif operator == '*':
         print(f"{a} + {b} = {calc.mul(a, b)}")
-        exit(0)
     elif operator == '/':
         print(f"{a} + {b} = {calc.div(a, b)}")
-        exit(0)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
