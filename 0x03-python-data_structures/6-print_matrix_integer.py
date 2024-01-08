@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
+    print()
+    return
     if len(matrix) > 1:
         i = 0
         for i in range(len(matrix)):
