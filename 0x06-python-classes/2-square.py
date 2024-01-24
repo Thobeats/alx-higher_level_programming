@@ -17,7 +17,7 @@ class Square:
         Parameters:
         - size (int): The size of each side of the square.
         """
-        
+
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
 
