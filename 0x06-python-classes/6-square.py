@@ -10,7 +10,7 @@ class Square:
     - __size (int): The size of each side of the square.
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializes a new Square instance with the given size.
 
