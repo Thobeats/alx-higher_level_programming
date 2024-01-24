@@ -24,7 +24,7 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-    
+
     def area(self):
         """
         Computes the square value of the Square Instance
@@ -33,4 +33,3 @@ class Square:
         - int: The area of the square
         """
         return pow(self.__size, 2)
-
