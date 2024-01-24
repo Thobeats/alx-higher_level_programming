@@ -58,7 +58,6 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-    
 
     def my_print(self):
         """
@@ -72,4 +71,3 @@ class Square:
                 for i in range(self.__size):
                     print("#", end="")
                 print()
-
