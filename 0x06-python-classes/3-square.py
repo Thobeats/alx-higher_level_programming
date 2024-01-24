@@ -29,6 +29,8 @@ class Square:
         """
         Computes the square value of the Square Instance
 
+        Returns:
+        - int: The area of the square
         """
-        return pow(self.__size)
+        return pow(self.__size, 2)
 
