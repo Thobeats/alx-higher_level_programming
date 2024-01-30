@@ -105,7 +105,7 @@ class Rectangle:
         Prints out the string representation of the Rectangle class
         """
         output = ""
-        if (self.__width == 0 and self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             return ""
         for i in range(self.__height):
             for i in range(self.__width):
