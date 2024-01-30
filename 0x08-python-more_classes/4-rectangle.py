@@ -118,5 +118,5 @@ class Rectangle:
         """
         Returns a formal string rep of the rectangle
         """
-        rep__ = "Rectangle(%s, %s)" %(self.__width, self.__height)
+        rep__ = "Rectangle(%s, %s)" % (self.__width, self.__height)
         return (rep__)
