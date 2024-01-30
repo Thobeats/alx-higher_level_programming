@@ -99,3 +99,17 @@ class Rectangle:
         if self.__width == 0 and self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """
+        Prints out the string representation of the Rectangle class
+        """
+        output = ""
+        if (self.__width == 0 and self.__height == 0):
+            return ""
+        for i in range(self.__height):
+            for i in range(self.__width):
+                output += "#"
+            output += "\n"
+        output = output[:-1]
+        return (output)
