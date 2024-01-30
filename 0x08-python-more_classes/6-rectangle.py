@@ -9,6 +9,7 @@ class Rectangle:
         Attributes:
         - __width (int): The width property of the Rectangle
         - __height (int): The height property of the Rectangle
+        - number_of_instances (int): the amount of instances existing
     """
 
     number_of_instances = 0
