@@ -42,7 +42,7 @@ class Rectangle:
         """
         return self.__width
 
-    @size.setter
+    @width.setter
     def width(self, value):
         """
         Sets the value of the width
@@ -57,7 +57,7 @@ class Rectangle:
         self.__width = value
 
     @property
-    def heigth(self):
+    def height(self):
         """
         Retrieves the value of the height property
 
@@ -78,4 +78,4 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__width = value
+        self.__height = value
