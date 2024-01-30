@@ -144,6 +144,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not rect_2 or not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() == rect_2.area():
+        if rect_1.area() >= rect_2.area():
             return rect_1
-        return max([rect_1.area(), rect_2.area()])
+        else:
+            return rect_2
