@@ -31,7 +31,7 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
-    """ defines an a getter to get the private property width """
+    """ defines a getter to get the private property width """
     @property
     def width(self):
         """
@@ -83,12 +83,18 @@ class Rectangle:
     def area(self):
         """
         Calculates the area of the rectangle
+
+        Return:
+        - int: the area
         """
         return (self.__width * self.__height)
 
     def perimeter(self):
         """
         Calculates the perimeter of the rectangle
+
+        Return:
+        - int: the perimeter
         """
         if self.__width == 0 and self.__height == 0:
             return 0
