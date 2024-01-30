@@ -114,7 +114,7 @@ class Rectangle:
         output = output[:-1]
         return (output)
 
-    def __rep__(self):
+    def __repr__(self):
         """
         Returns a formal string rep of the rectangle
         """
