@@ -1,0 +1,97 @@
+============================
+doctest for 2-matrix_divided.py
+============================
+``matrix_divided()`` divided a matrix by a divisor and returns a new matrix
+
+SUCCESSFUL TEST CONDITIONS
+==========================
+
+testing division of matrix with div
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+testing division of matrix with multi very large div
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 35555)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+testing division of matrix with multi very large div
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 35)
+[[0.03, 0.06, 0.09], [0.11, 0.14, 0.17]]
+
+testing division of matrix with floats
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3.5)
+[[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+
+testing division of matrix with floats
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], -3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+
+TEST CONDITIONS WHERE AN ERROR IS RAISED
+========================================
+
+testing with a div of 0
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by 0
+
+testing how matrix_divided function handles no arguments
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+testing how matrix_divided function handles None arguments
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided(None, None)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+testing how matrix_divided function handles more than 2 arguments
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3, 4)
+Traceback (most recent call last):
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+testing how matrix_divided function handles division by string
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], "div")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+testing how matrix_divided function handles matrix with unequal list length
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, 6], [5, 6, 7, 8]], 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+testing how matrix_divided function handles matrix with value not being a number
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[1, 2, 3],[4, 5, "you"]], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+testing how matrix_divided function handles list passed as argument
+::
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([1, 2, 3], 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
