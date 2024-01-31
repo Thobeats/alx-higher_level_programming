@@ -5,10 +5,10 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if (div == 0):
         raise ZeroDivisionError("division by 0")
-    if not all(isinstance(i, list) and all(isinstance(j , (int, float)) for j in i) for i in matrix):
+    if not all(isinstance(i, list) and all(isinstance(j, (int, float)) for j in i) for i in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     row_sizes = set(len(row) for row in matrix)
     if (len(row_sizes)) > 1:
         raise TypeError("Each row of the matrix must have the same size")
-    newMatrix = list(map (lambda ir: list(map(lambda val: round(val/div, 2), ir)), matrix))
+    newMatrix = list(map(lambda ir: list(map(lambda val: round(val/div, 2), ir)), matrix))
     return newMatrix
