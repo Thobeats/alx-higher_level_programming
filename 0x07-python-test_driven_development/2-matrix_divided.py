@@ -16,9 +16,6 @@ def matrix_divided(matrix, div):
         for j in i:
             if not isinstance(j, (int, float)):
                 raise TypeError(emsg)
-    # if not all(isinstance(i, list)and
-    # all(isinstance(j, (int, float)) for j in i)
-    # for i in matrix):
     row_sizes = set(len(row) for row in matrix)
     if (len(row_sizes)) > 1:
         raise TypeError("Each row of the matrix must have the same size")
@@ -29,5 +26,3 @@ def matrix_divided(matrix, div):
             matrix_value.append(round(j/div, 2))
         new_matrix.append(matrix_value)
     return new_matrix
-    # return list(map(lambda ir: list(map(lambda val:
-    # round(val/div, 2), ir)), matrix))
