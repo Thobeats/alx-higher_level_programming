@@ -15,7 +15,7 @@ My name is Iyanu Dayisi
 testing printing input first name string with default last name empty string
 ::
 >>> say_my_name("Iyanu")
-My name is Iyanu
+My name is Iyanu 
 
 testing empty string arguments
 ::
