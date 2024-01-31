@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """ a function that idents a given text """
+
+
 def text_indentation(text):
+    """ checks for text """
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     newLine = ""
