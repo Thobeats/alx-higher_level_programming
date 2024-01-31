@@ -4,7 +4,7 @@ def matrix_divided(matrix, div):
     if type(div) not in (int, float):
         raise TypeError("div must be a number")
     if (div == 0):
-        raise ZeroDivisionError("division by 0")
+        raise ZeroDivisionError("division by zero")
     if not all(isinstance(i, list) and all(isinstance(j, (int, float)) for j in i) for i in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     row_sizes = set(len(row) for row in matrix)
