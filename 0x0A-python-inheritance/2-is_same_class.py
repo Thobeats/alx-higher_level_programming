@@ -3,7 +3,7 @@
 
 
 def is_same_class(obj, a_class):
-    """use the type method to check"""
+    """checks if the instance is a direct instance of the class"""
 
     if type(obj) is a_class:
         return True
