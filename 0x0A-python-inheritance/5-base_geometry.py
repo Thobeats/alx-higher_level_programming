@@ -4,6 +4,4 @@
 
 class BaseGeometry():
     """creates an empty class"""
-    
     pass
-
