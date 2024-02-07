@@ -7,6 +7,6 @@ def read_file(filename=""):
     if filename != "":
         with open(filename, "r", encoding="utf-8") as fl:
             read_file = fl.read()
-            print(read_file)
+            print(read_file, end="")
     else:
         print()
