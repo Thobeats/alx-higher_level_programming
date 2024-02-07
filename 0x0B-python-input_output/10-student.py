@@ -2,8 +2,7 @@
 """ a class that defines a Student """
 
 
-class Student():
-    """ class to define student """
+class Student:
     first_name
     last_name
     age
