@@ -91,7 +91,7 @@ class Rectangle(Base):
     def mustBeInt(self, key, value):
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(key))
-    
+
     def mustBeGreaterThanZero(self, key, value):
         if value <= 0:
             raise ValueError("{} must be > 0".format(key))
