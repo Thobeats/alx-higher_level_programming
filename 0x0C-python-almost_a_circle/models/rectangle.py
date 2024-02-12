@@ -88,6 +88,27 @@ class Rectangle(Base):
         self.mustBeGreaterOrEqualZero("y", value)
         self.__y = value
 
+    def area(self):
+        return (self.__width * self.__height)
+
+    def display(self):
+        """
+        prints out the rectangle with # character
+        """
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """
+        print out a string rep of the rectangle class
+        """
+        str_rep = "[Rectangle] ({:d}) {}/{} - {}/{}"
+        return (str_rep.format(
+            self.id, self.__x, self.__y,
+            self.__width, self.__height))
+
     def mustBeInt(self, key, value):
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(key))
