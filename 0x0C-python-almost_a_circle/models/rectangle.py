@@ -95,10 +95,42 @@ class Rectangle(Base):
         """
         prints out the rectangle with # character
         """
+        for y in range(self.__y):
+            print()
         for i in range(self.__height):
+            print(" "*self.__x, end="")
             for j in range(self.__width):
                 print("#", end="")
             print()
+
+    def update(self, *args, **kwargs):
+        """
+        reassign values to the rectangle properties
+        """
+        if args and len(args) > 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.__width = args[i]
+                if i == 2:
+                    self.__height = args[i]
+                if i == 3:
+                    self.__x = args[i]
+                if i == 4:
+                    self.__y = args[i]
+        elif kwargs and len(kwargs) > 0:
+            for j in kwargs:
+                if j == "id":
+                    self.id = kwargs[j]
+                if j == "width":
+                    self.__width = kwargs[j]
+                if j == "height":
+                    self.__height = kwargs[j]
+                if j == "x":
+                    self.__x = kwargs[j]
+                if j == "y":
+                    self.__y = kwargs[j]
 
     def __str__(self):
         """
