@@ -3,6 +3,7 @@
 
 
 class Base:
+    """ keeps the record of all instances """
     __nb_objects = 0
 
     def __init__(self, id=None):
