@@ -140,7 +140,7 @@ class Rectangle(Base):
         return (str_rep.format(
             self.id, self.__x, self.__y,
             self.__width, self.__height))
-    
+
     def to_dictionary(self):
         """
             Returns the dictionary rep of the rectangle
