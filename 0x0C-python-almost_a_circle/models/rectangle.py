@@ -140,6 +140,18 @@ class Rectangle(Base):
         return (str_rep.format(
             self.id, self.__x, self.__y,
             self.__width, self.__height))
+    
+    def to_dictionary(self):
+        """
+            Returns the dictionary rep of the rectangle
+        """
+        rect_dictionary = {}
+        rect_dictionary["id"] = self.id
+        rect_dictionary["width"] = self.__width
+        rect_dictionary["height"] = self.__height
+        rect_dictionary["x"] = self.__x
+        rect_dictionary["y"] = self.__y
+        return rect_dictionary
 
     def mustBeInt(self, key, value):
         if not isinstance(value, int):
