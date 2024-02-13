@@ -158,13 +158,22 @@ class Rectangle(Base):
         return rect_dictionary
 
     def mustBeInt(self, key, value):
+        """
+        Validates the value as an Integer
+        """
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(key))
 
     def mustBeGreaterThanZero(self, key, value):
+        """
+        Validates the value not less or equal to zero
+        """
         if value <= 0:
             raise ValueError("{} must be > 0".format(key))
 
     def mustBeGreaterOrEqualZero(self, key, value):
+        """
+        Validates the value greater or equal zero
+        """
         if value < 0:
             raise ValueError("{} must be >= 0".format(key))
