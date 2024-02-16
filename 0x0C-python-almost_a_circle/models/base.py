@@ -33,14 +33,15 @@ class Base:
         saves the json rep of the list objects of the
         class into a file
         """
-        if list_objs is None:
-            return "[]"
-
-        list_dicts = []
-        for instance in list_objs:
-            list_dicts.append(instance.to_dictionary())
         filename = cls.__name__ + ".json"
-        jsonListRep = cls.to_json_string(list_dicts)
+        list_dicts = []
+
+        if list_objs is not None:
+            for instance in list_objs:
+                list_dicts.append(instance.to_dictionary())
+            jsonListRep = cls.to_json_string(list_dicts)
+        else:
+            jsonListRep = "[]"
         with open(filename, "w") as fout:
             return fout.write(jsonListRep)
 
