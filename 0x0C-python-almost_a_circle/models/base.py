@@ -43,7 +43,7 @@ class Base:
         jsonListRep = cls.to_json_string(list_dicts)
         with open(filename, "w") as fout:
             return fout.write(jsonListRep)
-    
+
     @staticmethod
     def from_json_string(json_string):
         """
