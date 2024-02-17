@@ -37,6 +37,12 @@ class TestBase(unittest.TestCase):
         self.assertDictEqual(dictionary, {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8})
         self.assertEqual(json_dictionary, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
+        json_dictionary = Base.to_json_string(None)
+        self.assertEqual(json_dictionary, '[]')
+
+        json_dictionary = Base.to_json_string([])
+        self.assertEqual(json_dictionary, '[]')
+
     def test_pepEight_code_style(self):
         """ test if the code follows pep8 codestyle """
         pepEightStyle = pep8.StyleGuide(quiet='true')
