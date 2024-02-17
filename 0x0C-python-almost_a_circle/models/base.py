@@ -67,3 +67,17 @@ class Base:
             instance = cls(1, 0, 0)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """returns an instance with all attributes already set
+        using update method"""
+        filename = cls.__name__ + ".json"
+        listObjs = []
+        try:
+            with open(filename, 'r') as f:
+                for instance in cls.from_json_string(f.read()):
+                    listObjs.append(cls.create(**instance))
+        except Exception as err:
+            pass
+        return (listObjs)
