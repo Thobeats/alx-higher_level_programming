@@ -56,7 +56,7 @@ class Base:
         import json
         loadedJson = json.loads(json_string)
         return loadedJson
-    
+
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set
