@@ -81,3 +81,34 @@ class Base:
         except Exception as err:
             pass
         return (listObjs)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serializes in CSV
+        """
+        filename = cls.__name__ + ".csv"
+        list_dict = []
+        if list_objects is not None:
+            for instance in list_objects:
+                list_dict.append(instance.to_dictionary())
+            listJsonRep = cls.to_json_string()
+        else:
+            listJsonRep = "[]"
+        with open(filename, 'w') as fout:
+            fout.write(listJsonRep)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        deserialize from csv
+        """
+        filename = cls.__name__ + '.csv'
+        listObjs = []
+        try:
+            with open(filename, 'r') as fread:
+                for instance in cls.from_json_string(fread.read()):
+                    listObjs.append(cls.create(**instance))
+        except Exception as err:
+            pass
+        return listObjs
