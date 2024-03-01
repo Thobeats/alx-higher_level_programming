@@ -112,3 +112,28 @@ class Base:
         except Exception as err:
             pass
         return listObjs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        draw the instances of a rectangle and square
+        """
+        import turtle
+        if list_rectangles is not None or len(list_rectangles) > 0:
+            for rect in list_rectangles:
+                trtl = turtle.Turtle()
+                trtl.forward(rect.width)
+                trtl.left(90)
+                trtl.forward(rect.height)
+                trtl.left(90)
+                trtl.forward(rect.width)
+                trtl.left(90)
+                trtl.forward(rect.height)
+        if list_squares is not None or len(list_squares) > 0:
+            for sqr in list_squares:
+                drawCount = 0
+                trtl = turtle.Turtle()
+                while drawCount < 4:
+                    trtl.forward(sqr.size)
+                    trtl.left(90)
+                    drawCount += 1
