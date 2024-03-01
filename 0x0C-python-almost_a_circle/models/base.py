@@ -89,10 +89,10 @@ class Base:
         """
         filename = cls.__name__ + ".csv"
         list_dict = []
-        if list_objects is not None:
-            for instance in list_objects:
+        if list_objs is not None:
+            for instance in list_objs:
                 list_dict.append(instance.to_dictionary())
-            listJsonRep = cls.to_json_string()
+            listJsonRep = cls.to_json_string(list_dict)
         else:
             listJsonRep = "[]"
         with open(filename, 'w') as fout:
