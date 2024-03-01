@@ -10,7 +10,7 @@ void print_python_list_info(PyObject *p)
 	size_t len = PyList_Size(p);
 
 	printf("[*] Size of the Python list = %ld\n", len);
-	printf("[*] Allocated = %ld\n", object->allocated);
+	printf("[*] Allocated = %ld\n", ((PyListObject*)p)->allocated);
 	for (i = 0, i < len; i++)
 		printf("Element %d: %s\n", i, "str");
 }
