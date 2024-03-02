@@ -29,6 +29,52 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 2)
         self.assertEqual(r1.y, 4)
         self.assertEqual(r1.id, 3)
+
+        r2 = Rectangle(11, 14)
+        self.assertEqual(r2.width, 11)
+        self.assertEqual(r2.height, 14)
+        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.y, 0)
+        self.assertEqual(r2.id, 6)
+
+        r3 = Rectangle(12, 15, 5)
+        self.assertEqual(r3.width, 12)
+        self.assertEqual(r3.height, 15)
+        self.assertEqual(r3.x, 5)
+        self.assertEqual(r3.y, 0)
+        self.assertEqual(r3.id, 7)
+
+        r4 = Rectangle(12, 15, 5, 6)
+        self.assertEqual(r4.width, 12)
+        self.assertEqual(r4.height, 15)
+        self.assertEqual(r4.x, 5)
+        self.assertEqual(r4.y, 6)
+        self.assertEqual(r4.id, 8)
+
+        with self.assertRaises(TypeError):
+            r5 = Rectangle("12", 15)
+        
+        with self.assertRaises(TypeError):
+            r6 = Rectangle(12, "15")
+
+        with self.assertRaises(TypeError):
+            r7 = Rectangle(12, 15, "5")
+
+        with self.assertRaises(TypeError):
+            r8 = Rectangle(12, 15, 5, "6")
+
+        with self.assertRaises(ValueError):
+            r5 = Rectangle(-12, 15)
+
+        with self.assertRaises(ValueError):
+            r6 = Rectangle(12, -15)
+        
+        with self.assertRaises(ValueError):
+            r7 = Rectangle(12, 15, -5)
+
+        with self.assertRaises(ValueError):
+            r8 = Rectangle(12, 15, 5, -3)
+        
     
     def test_rectangle_area(self):
         """
