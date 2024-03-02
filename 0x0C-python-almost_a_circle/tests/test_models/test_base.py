@@ -43,6 +43,22 @@ class TestBase(unittest.TestCase):
         json_dictionary = Base.to_json_string([])
         self.assertEqual(json_dictionary, '[]')
 
+    def test_from_json_string(self):
+        """
+        test the from json string function in the Base class
+        """
+        r2 = Rectangle(10, 7, 2, 8, 1)
+        dictionary = r2.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        convert_string_to_dict = Base.from_json_string(json_dictionary)
+        self.assertListEqual([dictionary], convert_string_to_dict)
+
+        noneDict = Base.from_json_string(None)
+        self.assertListEqual(noneDict, [])
+
+        emptyDict = Base.from_json_string("[]")
+        self.assertListEqual(emptyDict, [])
+
     def test_pepEight_code_style(self):
         """ test if the code follows pep8 codestyle """
         pepEightStyle = pep8.StyleGuide(quiet='true')
