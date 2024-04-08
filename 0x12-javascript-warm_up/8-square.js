@@ -6,7 +6,7 @@ if (isNaN(occurence)) {
   let i = 0;
   let j = 0;
   let mySquare = '';
-  
+
   while (j < occurence) {
     mySquare += 'X';
     j++;
