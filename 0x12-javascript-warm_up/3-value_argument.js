@@ -1,12 +1,8 @@
 #!/usr/bin/node
 const args = process.argv.length - 2;
-let response;
 if (args === 0) {
-  response = 'No argument';
+  console.log('No argument');
 } else if (args > 0) {
-  response = '';
-  for (let i = 2; i < process.argv.length; i++) {
-    response += process.argv[i] + ' ';
-  }
+  response = process.argv.slice(2);
+  console.log(response[0]);
 }
-console.log(response);
