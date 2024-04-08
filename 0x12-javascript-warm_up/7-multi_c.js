@@ -5,7 +5,7 @@ if (isNaN(occurence)) {
 } else {
   let i = 0;
   while (i < occurence) {
-    console.log('c is fun');
+    console.log('C is fun');
     i++;
   }
 }
