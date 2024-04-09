@@ -5,8 +5,10 @@ class Rectangle {
   height;
 
   constructor (x, y) {
-    this.width = x;
-    this.height = y;
+    if (x > 0 && y > 0) {
+      this.width = x;
+      this.height = y;
+    }
   }
 }
 
