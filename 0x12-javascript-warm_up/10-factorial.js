@@ -4,7 +4,7 @@ function factorial (a) {
     return (1);
   } else {
     if (a > 0) {
-      return (parseInt(a) * parseInt(factorial(a - 1)));
+      return (a * factorial(a - 1));
     } else {
       return (1);
     }
@@ -12,4 +12,4 @@ function factorial (a) {
 }
 const [, , factorialNum] = process.argv;
 
-console.log(factorial(factorialNum));
+console.log(factorial(Number(factorialNum)));
