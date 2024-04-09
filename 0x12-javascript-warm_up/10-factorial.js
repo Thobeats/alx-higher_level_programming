@@ -6,7 +6,7 @@ function factorial (a) {
   return 0;
 }
 const [, , factorialNum] = process.argv;
-if (isNaN(factorialNum)) {
+if (isNaN(factorialNum) || factorialNum < 0) {
   console.log(1);
 } else {
   console.log(factorial(factorialNum));
