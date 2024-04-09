@@ -17,6 +17,7 @@ class TestRectangle(unittest.TestCase):
         Instantiate a new rectangle
         """
         self.rect = Rectangle(5, 3)
+        self.rct = Rectangle(5, 3, 2, 2)
 
     def test_rectangle_instantiation(self):
         """
@@ -101,7 +102,7 @@ class TestRectangle(unittest.TestCase):
         class
         """
         r1 = Rectangle(10, 10, 10, 10)
-        self.assertEqual(r1.__str__(), "[Rectangle] (25) 10/10 - 10/10")
+        self.assertEqual(r1.__str__(), "[Rectangle] (33) 10/10 - 10/10")
 
         r1.update(89)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
@@ -136,9 +137,25 @@ class TestRectangle(unittest.TestCase):
         test the display function
         """
         expected_output = "#####\n#####\n#####\n"
-        expected_output2 = "  #####\n  #####\n  #####\n"
         self.rect.display()
         self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    @patch('sys.stdout', new_callable=StringIO)
+    def test_rectangle_display2(self, mock_stdout):
+        """
+        test the display function
+        """
+        expected_output = "\n\n  #####\n  #####\n  #####\n"
+        self.rct.display()
+        self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_rectangle_create():
+        """
+        test the create function
+        """
+        dictionaryOne = { 'id': 89 }
+        
+
 
     def test_pepEight_code_style(self):
         """ test if the code follows pep8 codestyle """
