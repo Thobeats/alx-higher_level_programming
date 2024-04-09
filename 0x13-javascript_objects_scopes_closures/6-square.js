@@ -7,7 +7,11 @@ class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c = 'X') {
+  charPrint (c) {
+    if (c === undefined) {
+      c = 'X';
+    }
+
     let myX = '';
     let i = 0;
     let j = 0;
