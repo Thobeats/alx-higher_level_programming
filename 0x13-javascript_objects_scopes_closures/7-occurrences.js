@@ -7,6 +7,6 @@ exports.nbOccurences = function (list, searchElement) {
       ++noOfOccurence;
     }
   });
-  
+
   return noOfOccurence;
-}
+};
