@@ -19,7 +19,7 @@ if __name__ == "__main__":
             SELECT cities.id, states.name, cities.name
             FROM cities
             INNER JOIN states
-            ON cities.state_id = state.id
+            ON cities.state_id = states.id
             ORDER BY cities.id ASC
             """
     cur.execute(sql)
