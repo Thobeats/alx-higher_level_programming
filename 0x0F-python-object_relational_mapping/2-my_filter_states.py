@@ -20,8 +20,9 @@ if __name__ == "__main__":
     cur.execute(sql.format(argv[3], argv[4]))
     states = cur.fetchall()
 
-    for state in states:
-        print(state)
+    if states is not None:
+        for state in states:
+            print(state)
 
     cur.close()
     conn.close()
