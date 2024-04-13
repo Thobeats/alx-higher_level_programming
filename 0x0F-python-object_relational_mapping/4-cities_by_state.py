@@ -22,8 +22,7 @@ if __name__ == "__main__":
             ON cities.state_id = state.id
             ORDER BY cities.id ASC
             """
-    value = (argv[4],)
-    cur.execute(sql.format(argv[3]), value)
+    cur.execute(sql)
     cities = cur.fetchall()
 
     if cities is not None:
