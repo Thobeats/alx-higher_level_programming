@@ -18,9 +18,10 @@ if __name__ == "__main__":
     cur = conn.cursor()
     sql = "SELECT * FROM {}.states WHERE name = '{}' ORDER BY states.id ASC"
     cur.execute(sql.format(argv[3], argv[4]))
-    state = cur.fetchone()
+    states = cur.fetchall()
 
-    print(state)
+    for state in states:
+        print(state)
 
     cur.close()
     conn.close()
