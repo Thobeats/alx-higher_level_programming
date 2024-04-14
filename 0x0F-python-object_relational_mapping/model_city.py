@@ -11,6 +11,7 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+
 class City(Base):
     """
     define a City class that
