@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Write a Python script
-that  prints all City objects 
+that  prints all City objects
 from the database hbtn_0e_14_usa
 """
 
@@ -28,9 +28,9 @@ if __name__ == "__main__":
         filter(City.state_id == State.id). \
         order_by(City.id). \
         all()
-    
+
     for city, state in cities:
-        print("{} : ({}) {}".format(state.name,
+        print("{}: ({}) {}".format(state.name,
                                     city.id,
                                     city.name))
     session.close()
