@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-Write a script that deletes all
-State objects with a name
-containing the letter a from
-the database hbtn_0e_6_usa
+Write a Python script
+that  prints all City objects 
+from the database hbtn_0e_14_usa
 """
 
 from sys import argv
 from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 State = __import__('model_state').State
+City = __import__('model_city').City
 Base = __import__('model_state').Base
 
 
@@ -23,10 +24,13 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    states = session.query(State). \
-        filter(State.name.like('%a%')). \
+    cities = session.query(City, State). \
+        filter(City.state_id == State.id). \
+        order_by(City.id). \
         all()
-    for state in states:
-        session.delete(state)
-    session.commit()
+    
+    for city, state in cities:
+        print("{} : ({}) {}".format(state.name,
+                                    city.id,
+                                    city.name))
     session.close()
