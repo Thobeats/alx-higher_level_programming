@@ -12,6 +12,7 @@ from sqlalchemy.orm import declarative_base
 Base = declarative_base()
 City = __import__('model_city').City
 
+
 class State(Base):
     """
     define a State class that
