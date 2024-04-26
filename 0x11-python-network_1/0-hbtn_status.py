@@ -12,8 +12,8 @@ with urlreq.urlopen(url) as response:
     result = response.read()
     # resf means response format
     resf = "Body response:\n"
-    resf += "    - type: {}\n"
-    resf += "    - content: {}\n"
-    resf += "    - utf8 content: {}"
+    resf += "\t- type: {}\n"
+    resf += "\t- content: {}\n"
+    resf += "\t- utf8 content: {}"
     resf = resf.format(type(result), result, result.decode())
     print(resf)
