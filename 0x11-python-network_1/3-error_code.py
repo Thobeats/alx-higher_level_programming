@@ -10,13 +10,9 @@ if __name__ == "__main__":
     from urllib.error import HTTPError
     import sys
     url = sys.argv[1]
-    data = {
-        "email": sys.argv[2]
-    }
-    data = urlparse.urlencode(data).encode('utf8')
     try:
         # Make a GET request
-        with urlreq.urlopen(url, data) as response:
+        with urlreq.urlopen(url) as response:
             result = response.read()
             print(result.decode())
     except HTTPError as e:
