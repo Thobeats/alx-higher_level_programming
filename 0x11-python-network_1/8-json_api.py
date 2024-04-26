@@ -14,11 +14,13 @@ if __name__ == "__main__":
         data['q'] = ""
     else:
         data['q'] = sys.argv[1]
-    result = requests.post(url, data)
-    if (result.status_code == 200):
+    try:
+        result = requests.post(url, data)
+        result.raise_for_status()
+    except requests.exceptions.JSONDecodeError:
+        print("No content")
+    except requests.exceptions.InvalidJSONError:
+        print("Not a valid JSON")
+    else:
         res = result.json()
         print("[{}] {}".format(res['id'], res['name']))
-    elif result.status_code == 204:
-        print("No content")
-    else:
-        print("Not a valid JSON")
