@@ -12,7 +12,7 @@ if __name__ == "__main__":
     data = {
         "email": sys.argv[2]
     }
-    data = urlparse(data).encode('utf8')
+    data = urlparse.urlencode(data).encode('utf8')
     # Make a GET request
     with urlreq.urlopen(url, data) as response:
         result = response.read()
