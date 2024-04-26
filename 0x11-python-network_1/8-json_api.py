@@ -14,8 +14,9 @@ if __name__ == "__main__":
         data['q'] = ""
     else:
         data['q'] = sys.argv[1]
+    result = requests.post(url, data)
     try:
-        result = requests.post(url, data)
+        result.json()
     except requests.exceptions.JSONDecodeError as e:
         if e.status_code == 204:
             print("No content")
