@@ -14,14 +14,12 @@ if __name__ == "__main__":
         data['q'] = ""
     else:
         data['q'] = sys.argv[1]
+    result = requests.post(url, data)
     try:
-        result = requests.post(url, data)
-        result.raise_for_status()
-    except requests.exceptions.InvalidJSONError:
-        print("Not a valid JSON")
-    else:
         res = result.json()
         if (len(res) == 0):
             print("No content")
         else:
             print("[{}] {}".format(res['id'], res['name']))
+    except Exception:
+        print("Not a valid JSON")
