@@ -14,10 +14,10 @@ if __name__ == "__main__":
         data['q'] = ""
     else:
         data['q'] = sys.argv[1]
-    result = requests.post(url, data)
+    result = requests.post(url, data=data)
     try:
         res = result.json()
-        if (len(res) == 0):
+        if (res == {}):
             print("No content")
         else:
             print("[{}] {}".format(res['id'], res['name']))
