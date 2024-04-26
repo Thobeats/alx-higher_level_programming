@@ -10,6 +10,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
     result = requests.get(url)
     if result.status_code >= 400:
-        raise requests.HTTPError(result.status_code)
+        print(result.status_code)
     else:
         print(result.text)
