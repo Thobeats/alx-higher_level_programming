@@ -12,4 +12,4 @@ if __name__ == "__main__":
         "email": sys.argv[2]
     }
     result = requests.post(url, data)
-    print(result.decode())
+    print(result.text)
