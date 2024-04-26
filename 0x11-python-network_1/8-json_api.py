@@ -22,4 +22,5 @@ if __name__ == "__main__":
         else:
             print("Not a valid JSON")
     else:
-        print(result.json())
+        res = result.json()
+        print("[{}] {}".format(res['id'], res['name']))
