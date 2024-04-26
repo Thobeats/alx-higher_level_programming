@@ -13,4 +13,5 @@ url = sys.argv[1]
 # Make a GET request
 with urlreq.urlopen(url) as response:
     result = response.info()
-    print(result.get('X-Request-Id'))
+    header = result.get('X-Request-Id')
+    print(header)
