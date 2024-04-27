@@ -13,7 +13,6 @@ if __name__ == "__main__":
     url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
     headers = {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
     }
 
