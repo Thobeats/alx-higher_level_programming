@@ -14,8 +14,7 @@ if __name__ == "__main__":
         data['q'] = ""
     else:
         data['q'] = sys.argv[1]
-    #result = requests.post(url, data=data)
-    result = "nop"
+    result = requests.post(url, data=data)
     try:
         res = result.json()
         if (res == {}):
