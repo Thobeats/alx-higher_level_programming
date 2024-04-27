@@ -15,4 +15,4 @@ if __name__ == "__main__":
     else:
         data['q'] = sys.argv[1]
     result = requests.post(url, data=data)
-    print(result)
+    print(type(result.json()))
