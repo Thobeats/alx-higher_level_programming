@@ -15,12 +15,18 @@ if __name__ == "__main__":
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28"
     }
-
-    result = requests.request('GET', url, headers=headers)
+    params = {
+        "per_page": 10,
+        "page": 1,
+    }
+    result = requests.request('GET', url, params=params, headers=headers)
     if result.status_code == 200:
         resultJson = result.json()
-        i = 0
-        while i < 10:
-            print("{}: {}".format(resultJson[i]['sha'],
-                                  resultJson[i]['commit']['author']['name']))
-            i = i + 1
+        sR = sorted(resultJson,
+                    key=lambda res: res['commit']['author']['date'],
+                    reverse=True)
+        for key, value in enumerate(sR):
+            print("{}: {}".format(sR[key]['sha'],
+                                  sR[key]['commit']['author']['name']))
+    else:
+        print("")
