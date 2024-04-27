@@ -17,9 +17,10 @@ if __name__ == "__main__":
     result = requests.post(url, data=data)
     try:
         res = result.json()
+    except (AttributeError):
+        print("Not a valid JSON")
+    else:
         if (res == {}):
             print("No result")
         else:
             print("[{}] {}".format(res['id'], res['name']))
-    except (AttributeError):
-        print("Not a valid JSON")
