@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """
-Write a Python script that takes in a letter
-and sends a POST request to
-http://0.0.0.0:5000/search_user with
-the letter as a parameter.
+Write a Python script that takes your GitHub credentials
+(username and password) and uses
+the GitHub API to display your id
 """
 if __name__ == "__main__":
     import requests
@@ -20,4 +19,8 @@ if __name__ == "__main__":
                               headers=headers,
                               auth=requests.auth.HTTPBasicAuth(username,
                                                                password))
-    print(result.json())
+    if result.status_code is 200:
+        resultJson = result.json()
+        print(resultJson['id'])
+    else:
+        print("None")
