@@ -15,12 +15,4 @@ if __name__ == "__main__":
     else:
         data['q'] = sys.argv[1]
     result = requests.post(url, data=data)
-    try:
-        res = result.json()
-        res.raise_status_code()
-        if (res == {}):
-            print("No content")
-        else:
-            print("[{}] {}".format(res['id'], res['name']))
-    except Exception:
-        print("Not a valid JSON")
+    print(result)
