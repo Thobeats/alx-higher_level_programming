@@ -19,6 +19,6 @@ if __name__ == "__main__":
     if not isinstance(res, dict):
         print("Not a valid JSON")
     elif (res == {}):
-        print("No content")
+        print("No result")
     else:
         print("[{}] {}".format(res['id'], res['name']))
