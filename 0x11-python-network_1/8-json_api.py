@@ -15,4 +15,10 @@ if __name__ == "__main__":
     else:
         data['q'] = sys.argv[1]
     result = requests.post(url, data=data)
-    print(type(result.json()))
+    res = result.json()
+    if not isinstance(res, dict):
+        print("Not a valid JSON")
+    elif (res == {}):
+        print("No content")
+    else:
+        print("[{}] {}".format(res['id'], res['name']))
