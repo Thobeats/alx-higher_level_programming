@@ -19,7 +19,7 @@ if __name__ == "__main__":
                               headers=headers,
                               auth=requests.auth.HTTPBasicAuth(username,
                                                                password))
-    if result.status_code is 200:
+    if result.status_code == 200:
         resultJson = result.json()
         print(resultJson['id'])
     else:
