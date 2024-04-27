@@ -25,10 +25,8 @@ if __name__ == "__main__":
         sR = sorted(resultJson,
                     key=lambda res: res['commit']['author']['date'],
                     reverse=True)
-        i = 0
-        while i < 10:
-            print("{}: {}".format(sR[i]['sha'],
-                                  sR[i]['commit']['author']['name']))
-            i = i + 1
+        for key, value in enumerate(sR):
+            print("{}: {}".format(sR[key]['sha'],
+                                  sR[key]['commit']['author']['name']))
     else:
         print("")
