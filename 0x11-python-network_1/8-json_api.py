@@ -17,6 +17,7 @@ if __name__ == "__main__":
     result = requests.post(url, data=data)
     try:
         res = result.json()
+        res.raise_status_code()
         if (res == {}):
             print("No content")
         else:
