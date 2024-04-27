@@ -30,3 +30,5 @@ if __name__ == "__main__":
             print("{}: {}".format(sR[i]['sha'],
                                   sR[i]['commit']['author']['name']))
             i = i + 1
+    else:
+        print("")
