@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const [,, movieId] = process.argv;
-const filmUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
+const filmUrl = `https://swapi-api.alx-tools.com/api/films`;
 
 const options = {
   url: filmUrl,
@@ -33,6 +33,6 @@ request(options, (error, response, body) => {
     return console.error(error);
   }
 
-  const bodyJson = JSON.parse(body);
+  const bodyJson = JSON.parse(body).results[movieId - 1];
   starWarsCharacters(bodyJson.characters, 0, bodyJson.characters.length);
 });
