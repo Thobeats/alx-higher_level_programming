@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const [,, movieId] = process.argv;
-const filmUrl = `https://swapi-api.alx-tools.com/api/films/`;
+const filmUrl = 'https://swapi-api.alx-tools.com/api/films/';
 
 const options = {
   url: filmUrl,
