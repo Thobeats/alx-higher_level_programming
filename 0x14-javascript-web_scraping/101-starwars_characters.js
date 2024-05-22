@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const [,, movieId] = process.argv;
-const filmUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const filmUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
 const options = {
   url: filmUrl,
@@ -11,20 +11,28 @@ const options = {
   }
 };
 
+function starWarsCharacters (characters, start, end) {
+  if (start === end) {
+    return;
+  }
+
+  request(characters[start], (error, response, res) => {
+    if (error) {
+      return console.error(error);
+    }
+    const characterBody = JSON.parse(res);
+    console.log(characterBody.name);
+  });
+
+  start++;
+  starWarsCharacters(characters, start, end);
+}
+
 request(options, (error, response, body) => {
   if (error) {
     return console.error(error);
   }
 
   const bodyJson = JSON.parse(body);
-  for (const character of bodyJson.results[movieId - 1].characters) {
-    request(character, (error, response, res) => {
-      if (error) {
-        return console.error(error);
-      }
-
-      const characterBody = JSON.parse(res);
-      console.log(characterBody.name);
-    });
-  }
+  starWarsCharacters(bodyJson.characters, 0, bodyJson.characters.length);
 });
