@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const [,, movieId] = process.argv;
-const filmUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
+const filmUrl = `https://swapi-api.alx-tools.com/api/films/`;
 
 const options = {
   url: filmUrl,
@@ -17,7 +17,7 @@ request(options, (error, response, body) => {
   }
 
   const bodyJson = JSON.parse(body);
-  for (const character of bodyJson.characters) {
+  for (const character of bodyJson.results[movieId - 1].characters) {
     request(character, (error, response, res) => {
       if (error) {
         return console.error(error);
