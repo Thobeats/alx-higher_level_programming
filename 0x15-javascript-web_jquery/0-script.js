@@ -1,3 +1,3 @@
 // Change the text color of the header with Javascript
 const header = document.querySelector('header');
-header.style.color = '#FF000';
+header.style.color = '#FF0000';

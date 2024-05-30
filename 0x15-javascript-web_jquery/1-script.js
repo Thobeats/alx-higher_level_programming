@@ -1,4 +1,4 @@
 // Change the color of the header with JQuery
 $('header').css({
-  color: '#FF000'
+  color: '#FF0000'
 });
